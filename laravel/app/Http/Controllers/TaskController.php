@@ -8,7 +8,7 @@ use  App\Models\Task;
 class TaskController extends Controller{
 
         
-    function index()
+    public function index()
     {      
         
         $tasks = Task::all();   
@@ -17,7 +17,7 @@ class TaskController extends Controller{
     }
     
     
-    function create()
+    public function create()
     {
 
         return view('task.create');
@@ -25,7 +25,7 @@ class TaskController extends Controller{
 
     }
         
-    function store()
+    public function store()
     {
 
         $data= request()->validate([
@@ -39,7 +39,7 @@ class TaskController extends Controller{
     }
 
 
-    function show($id)
+    public function show($id)
     {
         
         $task = Task::findOrFail($id);
@@ -48,7 +48,7 @@ class TaskController extends Controller{
     }
 
 
-    function edit($id)
+    public function edit($id)
     {
 
         $task = Task::findOrFail($id);
@@ -58,7 +58,7 @@ class TaskController extends Controller{
 
     }
 
-    function update($id)
+    public function update($id)
     {
 
         $data = request()->validate([
@@ -73,7 +73,7 @@ class TaskController extends Controller{
     }
 
     
-    function destroy($id)
+    public function destroy($id)
     {
 
     $task = Task::findOrFail($id);
